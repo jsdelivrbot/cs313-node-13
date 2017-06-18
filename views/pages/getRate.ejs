@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+    <% include ../partials/nav.ejs %>
+    <div class="container">
+        <h1>Shipping Rate</h1>
+        <a href="/">Enter a NEW Rate</a>
+    </div>
+    <div class="container">
+        <p>When shipping a "<%= MailType %>" with a parcel weight of <%= Weight %>, has a price of: <%= Result %></p>
+    </div>
+
+</body>
+</html>

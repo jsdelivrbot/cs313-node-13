@@ -9,6 +9,24 @@
     <div class="container">
         <h1>Hello World!</h1>
     </div>
+    <div class="container">
+        <form class="form-inline" action="/calc" method="get">
+            <div class="form-group">
+                <label class="form-control-label" for="mailtype">Mail Type</label>
+                <select class="form-control" id="inlineFormCustomSelect" name="mailtype">
+                    <option selected>Choose...</option>
+                    <option value="Letters (Stamped)">Letters (Stamped)</option>
+                    <option value="Letters (Metered)">Letters (Metered)</option>
+                    <option value="Large Envelopes (Flats)">Large Envelopes (Flats)</option>
+                    <option value="Parcels">Parcels</option>
+                </select>
+                <label class="form-control-label" for="weight">Parcel Weight</label>
+                <input class="form-control" type="text" id="inlineFormInputGroup" placeholder="Whole Number" name="weight">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
 </body>
 </html>
