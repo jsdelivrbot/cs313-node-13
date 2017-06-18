@@ -1,31 +1,6 @@
 /* postal.js - Adam Shumway, CS313 */
 
 /*
-Letters (Stamped)
-Letters (Metered)
-Large Envelopes (Flats)
-Parcels
-*/
-
-/* var result,
-    weight = Number(request.body.weight);
-        switch(Number(request.body.weight)){
-        case 1:
-            result = calcPostageLettersStamped(weight);
-            break;
-        case 2:
-            result = calcPostageLettersMetered(weight);
-            break;
-        case 3:
-            result = calcPostageLargeEnvelopes(weight);
-            break;
-        case 4:
-            result = calPostageParcel(weight);
-            break;
-    }
-*/
-
-/*
 Letters (Stamped)1
 Weight Not Over (oz.)
 
@@ -46,7 +21,7 @@ exports.calcPostageLettersStamped = function(weight) {
     if(weight > 3 && weight < 4)
         return "$1.12";
     else
-        return "Too Heavy for this Shipping Type!  Please choose a different shipping option.";
+        return "Too Heavy for this Shipping Type!  Please choose a different shipping option!";
 }
 
 /*
@@ -57,8 +32,22 @@ Weight Not Over (oz.)
 2 - 0.67
 3 - 0.88
 3.53 - 1.09
- 
-
+*/
+ exports.calcPostageLettersMetered = function(weight) {
+    switch(weight){
+        case 1:
+            return "$0.46";
+        case 2:
+            return "$0.67";
+        case 3:
+            return "$0.88";
+    }
+    if(weight > 3 && weight < 3.6)
+        return "$1.09";
+    else
+        return "Too Heavy for this Shipping Type!  Please choose a different shipping option!";
+}
+/*
 Large Envelopes (Flats)2
 Weight Not Over (oz.)
 
@@ -75,7 +64,40 @@ Weight Not Over (oz.)
 11 - 3.08
 12 - 3.29
 13 - 3.50
-
+*/
+ exports.calcPostageLargeEnvelopes = function(weight) {
+    switch(weight){
+        case 1:
+            return "$0.98";
+        case 2:
+            return "$1.19";
+        case 3:
+            return "$1.40";
+        case 4:
+            return "$1.61";
+        case 5:
+            return "$1.82";
+        case 6:
+            return "$2.03";
+        case 7:
+            return "$2.24";
+        case 8:
+            return "$2.45";
+        case 9:
+            return "$2.66";
+        case 10:
+            return "$2.87";
+        case 11:
+            return "$3.08";
+        case 12:
+            return "$3.29";
+        case 13:
+            return "$3.50";
+    }
+    if(weight > 13)
+        return "Too Heavy for this Shipping Type!  Please choose a different shipping option!";
+}
+/*
 Parcels
 Weight Not Over (oz.)
 
@@ -93,3 +115,35 @@ Weight Not Over (oz.)
 12 - 4.11
 13 - 4.29
 */
+exports.calPostageParcel = function(weight) {
+    switch(weight){
+        case 1:
+            return "$2.67";
+        case 2:
+            return "$2.67";
+        case 3:
+            return "$2.67";
+        case 4:
+            return "$2.67";
+        case 5:
+            return "$2.85";
+        case 6:
+            return "$3.03";
+        case 7:
+            return "$3.21";
+        case 8:
+            return "$3.39";
+        case 9:
+            return "$3.57";
+        case 10:
+            return "$3.75";
+        case 11:
+            return "$3.93";
+        case 12:
+            return "$4.11";
+        case 13:
+            return "$4.29";
+    }
+    if(weight > 13)
+        return "Too Heavy for this Shipping Type!  Please choose a different shipping option!";
+}

@@ -1,3 +1,4 @@
+/* index.js - Adam Shumway, CS313 */
 var express = require('express');
 var app = express();
 var url = require('url');
@@ -44,13 +45,13 @@ function computeOperation(response, postType, postWeight) {
     case "Letters (Stamped)":
       amt = postal.calcPostageLettersStamped(postWeight);
       break;
-    case 2:
+    case "Letters (Metered)":
       amt = postal.calcPostageLettersMetered(postWeight);
       break;
-    case 3:
+    case "Large Envelopes (Flats)":
       amt = postal.calcPostageLargeEnvelopes(postWeight);
       break;
-    case 4:
+    case "Parcels":
       amt = postal.calPostageParcel(postWeight);
       break;
   }
